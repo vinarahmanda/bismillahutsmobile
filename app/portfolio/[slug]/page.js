@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
-import { useParams } from "next/navigation"; // Import useParams to access dynamic route params
-import gsap from "gsap"; // Import GSAP for animations
+import { useParams } from 'next/navigation';  // Import useParams to access dynamic route params
+import gsap from "gsap";  // Import GSAP for animations
 
 const portfolioData = [
   {
@@ -49,18 +49,13 @@ const portfolioData = [
 
 export default function ProjectDetail() {
   const router = useRouter();
-  const { slug } = useParams(); // Use useParams to access slug
+  const { slug } = useParams();  // Use useParams to access slug
   const project = portfolioData.find((p) => p.slug === slug);
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    // Check for stored theme in localStorage
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else {
-      setTheme("light"); // Default theme
-    }
+    if (storedTheme) setTheme(storedTheme);
   }, []);
 
   const toggleTheme = () => {
@@ -71,16 +66,16 @@ export default function ProjectDetail() {
 
   useEffect(() => {
     // GSAP animations
-    if (theme === "light" && project) {
+    if (theme === "light") {
       gsap.fromTo(
         ".long-desc",
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
       );
     }
-  }, [theme, project]);
+  }, [theme]);
 
-  if (!project) return notFound(); // Handle case where project is not found
+  if (!project) return notFound();
 
   return (
     <main
