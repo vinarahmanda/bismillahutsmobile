@@ -1,0 +1,181 @@
+/* Import AOS (Animate On Scroll) untuk animasi */
+@import 'aos/dist/aos.css';
+
+/* Tailwind CSS - Basic Structure */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+  @apply font-sans text-gray-900 transition-colors duration-500;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Box sizing */
+* {
+  @apply box-border;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+a {
+  @apply text-pink-500 hover:text-pink-700 transition-all duration-300;
+}
+
+button {
+  @apply text-sm py-1 px-4 rounded-full transition-all duration-300;
+}
+
+ul {
+  @apply list-none p-0;
+}
+
+li {
+  @apply inline-block mr-6;
+}
+
+/* Navbar Styling */
+nav {
+  @apply fixed top-4 left-1/2 transform -translate-x-1/2
+         z-50 px-6 py-3 rounded-full shadow-lg 
+         backdrop-blur-md bg-opacity-80 transition-all duration-500 w-[90%] md:w-auto;
+}
+
+/* Gradasi Navbar & Background - Light Mode */
+.light {
+  background-image: linear-gradient(to right, #ffffff, #ff80ab, #e0e0e0); /* putih - pink - silver */
+  color: #1a1a1a;
+}
+
+/* Gradasi Navbar & Background - Dark Mode */
+.dark {
+  background-image: linear-gradient(to right, #1f2a60, #408f91); /* navy - teal dark */
+  color: #ffffff;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+.dark p, .dark a, .dark li {
+  color: #ffffff !important;
+}
+
+/* Navbar Links in Light Mode */
+.light a {
+  color: #333333;
+}
+
+.light a:hover {
+  color: #ff80ab; /* Soft pink on hover */
+}
+
+/* Navbar Links in Dark Mode */
+.dark a {
+  color: #ffffff;
+}
+
+.dark a:hover {
+  color: #32cd32; /* Green on hover */
+}
+
+/* Navbar Color Fix for Light Mode */
+.light nav {
+  background-color: #ffffff; /* White background for navbar in light mode */
+  color: #333333; /* Dark text for readability */
+}
+
+/* Container Utility */
+.container {
+  @apply mx-auto flex justify-between items-center;
+}
+
+/* Responsif Navbar - Mobile */
+@media (max-width: 768px) {
+  nav {
+    @apply p-4;
+  }
+
+  .menu {
+    @apply flex flex-col space-y-4;
+  }
+
+  .menu li {
+    @apply block;
+  }
+}
+
+/* Efek AOS */
+[data-aos] {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Background Section Styling */
+.bg-section-light {
+  background-image: linear-gradient(to right, #ffffff, #ffccda, #f1f1f1); /* light pink beige */
+}
+
+.bg-section-dark {
+  background-image: linear-gradient(to right, #1f2a60, #3f9a9c, #2b2d6d); /* dark navy-teal-skyblue */
+}
+
+/* Default Tailwind Gradient Overwrite */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, #2b2d6d, #2b8a8b); /* Navy to Teal */
+}
+
+/* Dark Mode Custom Styling */
+body.dark {
+  background-image: linear-gradient(to right, #1f2a60, #408f91); /* dark navy-teal */
+  color: #ffffff;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6,
+body.dark p, body.dark a {
+  color: #ffffff !important;
+}
+
+/* Dark Mode Navbar Links */
+.dark a {
+  color: #ffffff !important;
+}
+
+.dark a:hover {
+  color: #32cd32; /* Green on hover */
+}
+
+/* Dark Mode Button (Contact Me) */
+.dark .contact-button {
+  background-color: #2b8a8b; /* Teal for Contact Me button */
+  color: #ffffff;
+}
+
+.dark .contact-button:hover {
+  background-color: #1f2a60; /* Navy hover effect */
+}
+
+/* Dark Mode Icon on Skill Section */
+.dark .skill-icon {
+  color: #32cd32; /* Green for icons in skill section */
+}
+
+.dark .skill-icon:hover {
+  color: #ffffff; /* White color on hover */
+}
+
+/* Adjust Dark Mode Gradient Background */
+.dark .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #2b2d6d, #2b8a8b); /* Navy to Teal */
+}

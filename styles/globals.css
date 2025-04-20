@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Galaxy animation background */
+@keyframes galaxy-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.animate-galaxy-background {
+  background: linear-gradient(45deg, #f2c7f0, #ff66b2, #ff99cc, #ff3399, #a0c4ff);
+  background-size: 400% 400%;
+  animation: galaxy-animation 12s ease-in-out infinite;
+}
+
+/* Additional styles for smooth design */
+body {
+  font-family: 'Cairo', sans-serif; /* Set Arabic font globally */
+}
+
+.font-arabic {
+  font-family: 'Cairo', sans-serif;
+}
